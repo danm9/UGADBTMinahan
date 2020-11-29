@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Minahan</title>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet'>
+    <link rel='stylesheet' type='text/css' href='styles.css'>
+    <script type="text/javascript" src="velocity.js"></script>
+</head>
+<body>
+    <main>
+        <header>
+            <!-- Navigation -->
+            <nav>
+                <div class="container">
+                    <a href="index.html">
+                        <img src="img/Minahan.png"  width=75 height=90>
+                    </a>
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a class="active" href="velocity.html">VELOCITY</a></li>
+                        <li><a href="contact.html">CONTACT ME</a></li>
+                      </ul>
+                </div>
+            </nav>
+        </header>
+            
+        <h1 class="page-header">Velocity Calculator</h1>
+        <p class="velocity-description">The Velocity Calculator helps Agile Teams determine <br> 
+            their estimated velocity for Sprint Planning
+        </p>
+        
+        <div class="input-form">
+            <form> 
+                <!--velocity  -->
+                <div class="row">
+                    <div class="col-25">
+                        <label for="velocity">Velocity</label>
+                    </div>
+                    <div class="col-70" >
+                        <input 
+                            type="number" 
+                            id="velocity"
+                            name="velocity"
+                            placeholder="Previous or Average Velocity"
+                        >
+                    </div>
+                </div>
+              
+                <!--Total Team Members  -->
+                <div class="row">
+                    <div class="col-25">
+                        <label for="teamMembers">Team Members</label>
+                    </div>
+                    <div class="col-70" >
+                        <input 
+                            type="number" 
+                            id="teamMembers"
+                            name="teamMembers"
+                            placeholder="The Size of The Dev Team"
+                        >
+                    </div>
+                </div>
+              
+                <!-- Sprint Length -->
+                <div class="row">
+                    <div class="col-25">
+                        <label for="sprintLength">Sprint Length</label>
+                    </div>
+                    <div class="col-70" >
+                        <select class="" id="sprintLength">
+                            <option selected>Choose...</option>
+                            <option value="5">1 Week</option>
+                            <option value="10">2 Weeks</option>
+                            <option value="15">3 Weeks</option>
+                            <option value="20">4 Weeks</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!--Total Days Out  -->
+                <div class="row">
+                    <div class="col-25">
+                        <label for="daysOut">Days Out</label>
+                    </div>
+                    <div class="col-70" >
+                        <input 
+                            type="number" 
+                            id="daysOut"
+                            name="daysOut"
+                            placeholder="Total Days Out During the Sprint"
+                        >
+                    </div>
+                </div>
+              
+                <!--Average Injections  -->
+                <div class="row">
+                    <div class="col-25">
+                        <label for="averageInjections">Average Injections</label>
+                    </div>
+                    <div class="col-70" >
+                        <input 
+                            type="number" 
+                            id="averageInjections"
+                            name="averageInjections"
+                            placeholder="Average Amount of Injections Per Sprint"
+                        >
+                    </div>
+                </div>
+  
+                <!--Average Injection Effort  -->
+                <div class="row">
+                    <div class="col-25">
+                        <label for="injectionEffort">Injection Effort</label>
+                    </div>
+                    <div class="col-70" >
+                        <input 
+                            type="number" 
+                            id="injectionEffort"
+                            name="injectionEffort"
+                            placeholder="Average Effort Per Injection"
+                        >
+                    </div>
+                </div>
+                              
+                <!--Additional Hours Subtracted -->
+                <div class="row">
+                    <div class="col-25">
+                        <label for="additionalHours">Additional Hours</label>
+                    </div>
+                    <div class="col-70" >
+                        <input 
+                            type="number" 
+                            id="additionalHours"
+                            name="additionalHours"
+                            placeholder="Add Additional Hours To Subtract (meetings, etc.)"
+                        >
+                    </div>
+                </div>
+              
+                <!--Rollover Points  -->
+                <div class="row">
+                    <div class="col-25">
+                        <label for="rolloverPoints">Rollover Points</label>
+                    </div>
+                    <div class="col-70" >
+                        <input 
+                            type="number" 
+                            id="rolloverPoints"
+                            name="rolloverPoints"
+                            placeholder="Rollover Points"
+                        >
+                    </div>
+                </div>
+              
+                <button type="button" class="button" onclick="calculateVelocity(
+                    document.getElementById('velocity').value,
+                    document.getElementById('teamMembers').value,
+                    document.getElementById('sprintLength').value,
+                    document.getElementById('daysOut').value,
+                    document.getElementById('averageInjections').value,
+                    document.getElementById('injectionEffort').value,
+                    document.getElementById('additionalHours').value,
+                    document.getElementById('rolloverPoints').value)">Calculate</button>
+                
+                <p id="planFor" class="output"></p>
+            </form>
+        </div>
+
+        <footer>
+            <div class="container">
+                <a href="https://www.linkedin.com/in/danm9/">
+                    <img class="footer-image" alt="LinkedIn Logo" src="img/linkedInLogo.png"/>
+                </a>
+                <p>by <a href="https://www.linkedin.com/in/danm9/">Dan Minahan</a></p>
+            </div>
+        </footer>
+    </main>
+</body>
+
+</html>
